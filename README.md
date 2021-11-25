@@ -45,7 +45,9 @@ De esta manera, se puede dirigir a http://localhost:3000/ y comenzar a utilizar 
 En la pantalla principal se verán dos formularios para poder crear edificios y dependencias. Por lo aclarado anteriormente, primero se deben crear edificios para luego poder agregarle una dependencia. Debido a un tema de CORS puede ser que cuando se quiera cargar un edificio la primera vez este no sea dado de alta ya que el navegador primero le envía un método de options al backend, de ocurrir esto, porfavor vuelva a poner los datos e ingrese el edificio (este problema solo ocurre la primera vez y de vez en cuando).
 
 En las pestañas de 'Ver Edificios' y 'Ver Dependencias' se pueden visualizar los datos.
+
 En las pestañas de 'Modificar Edificios' y 'Modificar Dependencias' se pueden visualizar los datos ingresando el ID correspondiente. 
+
 Ejemplo caso edificio: Si se ingresa el ID de un edificio en la pestaña correspondiente se cargarán en los campos los datos que tenga ese edificio. Aquí se puede proseguir a modificarlos cambiando el texto y haciendo click en el botón 'Modificar Edificio' (si se desea, se puede eliminar la tupla con el botón 'Eliminar Edificio'). Si no existe ninguna entrada con ese ID, no se mostrará nada en los datos.
 
 
