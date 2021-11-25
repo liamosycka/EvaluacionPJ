@@ -155,16 +155,24 @@ router.put("/modif", function(req, res){
 
 router.delete("/delete/:id_edif", function(req, res){
     //eliminación de un edificio en particular
+    //El backend deja de ejecutarse cuando se elimina el edificio cuya clave
+    //primaria ya es clave foránea de alguna dependencia
     let sql='DELETE FROM edificio WHERE id_edif='+parseInt(req.params.id_edif)+'';
-    db.run(sql, (err)=>{
-        if(err){
-            let objError={};
-            objError.message="error";
-            objError.status=404;
-            res.send(objError)
-        }
-    });
-    res.sendStatus(200);
+    try{
+
+        db.run(sql, (err)=>{
+            if(err){
+                let objError={};
+                objError.message="error";
+                objError.status=404;
+                res.send(objError)
+            }
+        });
+        res.sendStatus(200);
+    }catch (e){
+        console.error(e)
+        res.sendStatus(400);
+    }
 })
 
 router.put("/dependencias/modif", function(req, res){
