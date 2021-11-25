@@ -1,7 +1,7 @@
 
 # EvaluaciónPJ 
 
-Aplicación para registrar, consultar, modificar, eliminar Edificios y Dependencias del Poder Judicial del Neuquén.
+Aplicación para registrar, consultar, modificar, eliminar edificios y dependencias del Poder Judicial del Neuquén.
 
 ## Instalación
 
