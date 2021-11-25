@@ -12,10 +12,10 @@ const nuevoCliente = () => {
     })
 }
 
-export const getDepartamentos = async () => {
+export const getEdificios = async () => {
     try {
         const cliente = nuevoCliente();
-        const response = await cliente.get('/departamentos/all')
+        const response = await cliente.get('/edificios/all')
         if (response.status === 200) {
             return response;
         }

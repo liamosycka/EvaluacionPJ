@@ -1,15 +1,15 @@
 import React from 'react';
 import  Inicio  from './Pages/inicio';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import ABMDepartamentos from './Pages/abmDepartamentos';
-import NavBar from './Components/NavBar';
+import ABMEdificios from './Pages/abmEdificios';
+import BarraNav from './Components/BarraNav';
 export const Rutas = () => {
     return (
         <Router>
-            <NavBar />
+            <BarraNav/>
             <Routes>
                 <Route path='/' element={<Inicio />}></Route>
-                <Route path='/departamentos' element={<ABMDepartamentos />}></Route>
+                <Route path='/edificios' element={<ABMEdificios />}></Route>
             </Routes>
         </Router>
     );
