@@ -9,13 +9,20 @@ var usersRouter = require('./routes/users');
 var edificiosRouter= require("./routes/edificios");
 var app = express();
 
+/*Se necesita usar esto para asegurar que en el primer POST ya se envíe los datos, ya que como
+el navegador comienza enviando OPTIONS, el primer post no puede realizarse porque el body llega vacio*/
+const corsOptions={
+  origin:true,
+  credentials: true
+}
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));

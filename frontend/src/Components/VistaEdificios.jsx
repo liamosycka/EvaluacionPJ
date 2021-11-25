@@ -4,23 +4,19 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Button, Row, Col, Form, Table, Container } from 'react-bootstrap'
 import { getEdificios } from '../Services/Edificio';
 import { getDependenciasEdif } from '../Services/Dependencia'
+import FormModifEdificio from './FormModifEdificio'
 
-const getedifs = async () => {
-    console.log("en getdesp")
-    const response = await getEdificios()
-    console.log("response: " + JSON.stringify(response.data))
-}
 
 const VistaEdificios = () => {
     const [edificios, setEdificios] = useState()
     const [noRender, setNoRender] = useState(true)
     const [arrDependencias, setArrDependencias] = useState()
     useEffect(() => {
-        async function getedifs() {
-            const response = await getEdificios()
+        async function getEdifs() {
+            const response = await getEdificios();
             response ? setEdificios((response.data.data)) : setEdificios()
         }
-        getedifs()
+        getEdifs()
     }, [noRender])
 
     const handleInputChange = async (event) => {
@@ -56,10 +52,10 @@ const VistaEdificios = () => {
                     <Table striped bordered hover>
                         <thead>Dependencias del edificio
                             <tr>
-                                <th>ID</th>
+                                <th>ID Dependencia</th>
                                 <th>Nombre</th>
                                 <th>Dirección</th>
-                                <th>Edificio</th>
+                                <th>ID Edificio</th>
                             </tr>
                         </thead>
                         <tbody id="tabla_dependencias">
@@ -81,6 +77,9 @@ const VistaEdificios = () => {
                         </tbody>
                     </Table>
                 </Col>
+            </Row>
+            <Row>
+                
             </Row>
         </Container>
     )

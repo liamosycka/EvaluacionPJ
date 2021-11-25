@@ -7,13 +7,19 @@ const BarraNav = () => {
             <Container fluid>
                 <Nav variant="tabs">
                     <Nav.Item>
-                        <Nav.Link href="/home">Inicio</Nav.Link>
+                        <Nav.Link href="/">Inicio</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/edificios">Edificios</Nav.Link>
+                        <Nav.Link href="/edificios/ver">Ver Edificios</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/dependencias">Dependencias</Nav.Link>
+                        <Nav.Link href="/dependencias/ver">Ver Dependencias</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="/edificios/modif">Modificar Edificios</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="/dependencias/modif">Modificar Dependencias</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </Container>

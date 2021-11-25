@@ -1,8 +1,13 @@
 import React, { Fragment } from 'react';
-
-function Inicio(){
+import FormAltaDependencia from '../Components/FormAltaDependencia';
+import FormAltaEdificio from '../Components/FormAltaEdificio';
+const Inicio= ()=>{
     return(
-        <p>En Inicio</p>
+        <Fragment>
+            <FormAltaEdificio />
+            <FormAltaDependencia/>
+        </Fragment>
+        
     )
 }
 export default Inicio
