@@ -1,8 +1,8 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button, Row, Col, Form, Table, Container } from 'react-bootstrap'
-import { getDependencias} from '../Services/Dependencia'
+import { Row, Col, Table, Container } from 'react-bootstrap'
+import { getDependencias } from '../Services/Dependencia'
 
 
 const VistaDependencias = () => {
@@ -10,8 +10,13 @@ const VistaDependencias = () => {
     const [arrDependencias, setArrDependencias] = useState()
     useEffect(() => {
         async function getDepend() {
-            const response = await getDependencias();
-            response ? setArrDependencias((response.data.data)) : setArrDependencias()
+            try {
+                const response = await getDependencias();
+                response ? setArrDependencias((response.data.data)) : setArrDependencias()
+            } catch (e) {
+                console.error(e)
+            }
+
         }
         getDepend()
     }, [noRender])
@@ -20,7 +25,7 @@ const VistaDependencias = () => {
         <Container>
             <Row>
                 <Col sm={6}>
-                <Table striped bordered hover>
+                    <Table striped bordered hover>
                         <thead>Listado de Dependencias
                             <tr>
                                 <th>ID Dependencia</th>
@@ -41,7 +46,7 @@ const VistaDependencias = () => {
                                             <td>{arrDependencias[i].id_edif_fk}</td>
                                         </tr>
                                     )
-                                    ) : "El edificio no tiene dependencias"
+                                    ) : "No hay Dependencias"
                             }
 
                         </tbody>
@@ -49,7 +54,7 @@ const VistaDependencias = () => {
 
 
                 </Col>
-                
+
             </Row>
         </Container>
     )

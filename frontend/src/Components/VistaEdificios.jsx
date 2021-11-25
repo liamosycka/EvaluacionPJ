@@ -1,16 +1,22 @@
 import React, { useState, useEffect, Fragment } from 'react'
 
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button, Row, Col, Form, Table, Container } from 'react-bootstrap'
+import { Row, Col, Form, Table, Container } from 'react-bootstrap'
 import { getEdificios } from '../Services/Edificio';
 import { getDependenciasEdif } from '../Services/Dependencia'
-import FormModifEdificio from './FormModifEdificio'
 
 
 const VistaEdificios = () => {
     const [edificios, setEdificios] = useState()
     const [noRender, setNoRender] = useState(true)
     const [arrDependencias, setArrDependencias] = useState()
+    /*con el useEffect (similar a component.didMount) precargo todos los edificios
+    de la BD para que el usuario pueda seleccionarlos de la lista.
+    Aclaración: Dada mi poca experiencia con React, he tenido que hacer uso de un hook
+    llamado "noRender" para que no se me recargue la página constantemente con cada cambio
+    de estado de los inputs. Esta solución funciona, tengo que seguir investigando si hay
+    una mejor manera de corregirlo.*/
+
     useEffect(() => {
         async function getEdifs() {
             const response = await getEdificios();
@@ -20,10 +26,10 @@ const VistaEdificios = () => {
     }, [noRender])
 
     const handleInputChange = async (event) => {
-        let nombreEvento = event.target.name
-        let valorEvento = event.target.value
+        let nombreEvento = event.target.name;
+        let valorEvento = event.target.value;
         if (nombreEvento == "lista_edificios" && valorEvento != "Seleccione un Edificio") {
-            const response = await getDependenciasEdif(valorEvento)
+            const response = await getDependenciasEdif(valorEvento);
             response ? setArrDependencias((response.data.data)) : setArrDependencias()
         }
     }
@@ -79,7 +85,7 @@ const VistaEdificios = () => {
                 </Col>
             </Row>
             <Row>
-                
+
             </Row>
         </Container>
     )

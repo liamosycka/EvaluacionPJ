@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react';
-import {Card, Button, Row, Col, Form, Table} from 'react-bootstrap'
+import React from 'react';
+import FormModifEdificio from '../Components/FormModifEdificio';
 
-
-const ModifEdificios= ()=> {
+const ModifEdificios = () => {
     return (
-        <p>En modif edicificios</p>
+        <FormModifEdificio></FormModifEdificio>
     )
 }
 export default ModifEdificios

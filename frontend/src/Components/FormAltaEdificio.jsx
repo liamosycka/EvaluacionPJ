@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Button, Row, Col, Form, Alert, Toast } from 'react-bootstrap'
+import React, { useState } from 'react';
+import { Card, Button, Row, Col, Form } from 'react-bootstrap'
 import { postEdificio } from '../Services/Edificio'
 
 const FormAltaEdificio = () => {
@@ -16,7 +16,11 @@ const FormAltaEdificio = () => {
     }
 
     const enviarDatosEdificio = async (event) => {
-        const response=postEdificio(datosEdificio);
+        try {
+            postEdificio(datosEdificio);
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     return (

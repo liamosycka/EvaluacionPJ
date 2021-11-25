@@ -1,6 +1,8 @@
 import axios from "axios"
 import config from './Config/config.json'
 
+//Servicio para consumir las rutas referidas a Dependencias
+
 const nuevoCliente = () => {
     return axios.create({
         baseURL: config.baseURL,
@@ -28,8 +30,7 @@ export const getEdificios = async () => {
 export const getEdificio = async (id_edif) => {
     try {
         const cliente = nuevoCliente();
-        console.log("EN get de react: ",id_edif)
-        const response = await cliente.get('/edificios/'+id_edif+'');
+        const response = await cliente.get('/edificios/' + id_edif + '');
         if (response.status === 200) {
             return response;
         }
@@ -39,26 +40,38 @@ export const getEdificio = async (id_edif) => {
     }
 }
 
-export const postEdificio = async (datosEdif)=>{
-    try{
+export const postEdificio = async (datosEdif) => {
+    try {
         const cliente = nuevoCliente();
         const response = await cliente.post('/edificios/nuevo', datosEdif)
         if (response.status === 200) {
             return response;
         }
-    }catch (e){
+    } catch (e) {
         console.error(e)
     }
 }
 
-export const putEdificio = async (datosEdif)=>{
-    try{
+export const putEdificio = async (datosEdif) => {
+    try {
         const cliente = nuevoCliente();
-        //const response = await cliente.post('/edificios/nuevo', datosEdif)
-        //if (response.status === 200) {
-        //    return response;
-        //}
-    }catch (e){
+        const response = await cliente.put('/edificios/modif', datosEdif);
+        if (response.status === 200) {
+            return response;
+        }
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+export const deleteEdificio = async (id_edif) => {
+    try {
+        const cliente = nuevoCliente();
+        const response = await cliente.delete('/edificios/delete/' + id_edif + '');
+        if (response.status === 200) {
+            return response;
+        }
+    } catch (e) {
         console.error(e)
     }
 }

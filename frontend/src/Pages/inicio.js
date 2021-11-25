@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import FormAltaDependencia from '../Components/FormAltaDependencia';
 import FormAltaEdificio from '../Components/FormAltaEdificio';
-const Inicio= ()=>{
-    return(
+const Inicio = () => {
+    return (
         <Fragment>
             <FormAltaEdificio />
-            <FormAltaDependencia/>
+            <FormAltaDependencia />
         </Fragment>
-        
+
     )
 }
 export default Inicio

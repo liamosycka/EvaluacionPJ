@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
-import {Card, Button, Row, Col, Form, Table} from 'react-bootstrap'
+import React from 'react';
+import FormModifdependencia from '../Components/FormModifDependencia';
 
 
-const ModifDependencias= ()=> {
+const ModifDependencias = () => {
     return (
-       <p>En Modif dependencias</p>
+        <FormModifdependencia />
     )
 }
 export default ModifDependencias

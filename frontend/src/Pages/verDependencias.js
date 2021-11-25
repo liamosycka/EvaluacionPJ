@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react';
-import {Card, Button, Row, Col, Form, Table} from 'react-bootstrap'
+import React from 'react';
 import VistaDependencias from '../Components/VistaDependencias'
 
-const VerDependencias= ()=> {
+const VerDependencias = () => {
     return (
         <VistaDependencias></VistaDependencias>
     )

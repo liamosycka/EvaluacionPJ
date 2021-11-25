@@ -1,6 +1,6 @@
 import React from 'react';
 import  Inicio  from './Pages/inicio';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import VerEdificios from './Pages/verEdificios';
 import VerDependencias from './Pages/verDependencias';
 import ModifEdificios from './Pages/modifEdificios';
