@@ -1,10 +1,9 @@
 
 # EvaluaciónPJ 
-> Additional information or tag line
 
 Aplicación para registrar, consultar, modificar, eliminar Edificios y Dependencias del Poder Judicial del Neuquén.
 
-## Installing / Getting started
+## Instalación
 
 Clonar el repositorio y ejecutar el primer npm install para el primer package.json
 
@@ -40,6 +39,6 @@ npm start
 De esta manera, se puede dirigir a http://localhost:3000/ y comenzar a utilizar la aplicación.
 
 
-### Built With
-El backend fue desarrollado con Express y el frontend con React.
+### Construido con
+El backend fue desarrollado con Express y el frontend con React. Para la base de datos se utilizó SQLite bajo su modo de ejecución en memoria (requisito de la evaluación).
 
