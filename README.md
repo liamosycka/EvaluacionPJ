@@ -16,7 +16,8 @@ cd EvaluacionPJ
 npm install
 ```
 
-Abrir otra terminal
+Abrir otra terminal.
+
 En 1 dirigirse a la carpeta /api y ejecutar:
 
 ```shell
@@ -42,6 +43,8 @@ npm start
 De esta manera, se puede dirigir a http://localhost:3000/ y comenzar a utilizar la aplicación.
 
 ## Uso
+Aclaración: Como las tablas poseen un ID entero autoincrementable, cuando se cree el primer edificio, este tendrá ID = 1. Con ese ID es que podemos crear una dependencia y ponerle que corresponde al edificio con ID 1. Aclaro esto porque no se muestra el ID del edificio en su visualización.
+
 En la pantalla principal se verán dos formularios para poder crear edificios y dependencias. Por lo aclarado anteriormente, primero se deben crear edificios para luego poder agregarle una dependencia. Debido a un tema de CORS puede ser que cuando se quiera cargar un edificio la primera vez este no sea dado de alta ya que el navegador primero le envía un método de options al backend, de ocurrir esto, porfavor vuelva a poner los datos e ingrese el edificio (este problema solo ocurre la primera vez y de vez en cuando).
 
 En las pestañas de 'Ver Edificios' y 'Ver Dependencias' se pueden visualizar los datos.
