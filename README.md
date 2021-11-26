@@ -1,7 +1,7 @@
 
 # EvaluaciónPJ 
 
-Aplicación parte de una entrevista que permite registrar, consultar, modificar y eliminar edificios y dependencias del Poder Judicial del Neuquén.
+Aplicación que permite registrar, consultar, modificar y eliminar edificios y dependencias.
 
 ## Decisiones de Diseño
 Se tienen dos modelos, edificio y dependencia. Un edificio puede tener 1 o más dependencias mientras que una dependencia corresponde a 1 solo edificio. La manera de representar esto fue con una clave foránea en la tabla de dependencia que apunte a la clave primaria de edificio (esto causa que una dependencia no puede ser dada de alta hasta que no exista el edificio correspondiente). Como políticas de integridad referencial decidí utilizar CASCADE en cada update que haya de la clave primaria de edificio (no debería suceder) y un RESTRICT cuando se quiera eliminar un edificio que ya esté siendo referenciado por una dependencia (ya que sino esto podría causar que por borrar un edificio se borren muchas dependencias).
